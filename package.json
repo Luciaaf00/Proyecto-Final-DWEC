@@ -1,0 +1,29 @@
+{
+  "name": "Proyecto-Final-DWEC",
+  "version": "1.0.0",
+  "description": "Se realizará una plataforma en la que se puedan buscar mangas, libros o comics accediendo a una base de datos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luciaaf00/Proyecto-Final-DWEC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luciaaf00/Proyecto-Final-DWEC/issues"
+  },
+  "homepage": "https://github.com/Luciaaf00/Proyecto-Final-DWEC#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "forms": "^1.3.2",
+    "mongoose": "^6.9.1",
+    "nodemon": "^2.0.20",
+    "sass": "^1.58.0"
+  }
+}

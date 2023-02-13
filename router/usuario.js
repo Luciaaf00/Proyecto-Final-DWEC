@@ -6,7 +6,7 @@ const router = express.Router();
 // de contactos ( /contaco )
 // Importante que ya no usaremos el app.get(...), ahora
 //vamos a utilizar las rutas, por lo que deberemos poner:
-router.get('/', (req, res) => {
+router.get('/login', (req, res) => {
     res.render("login", { titulo: "mi titulo dinámico" })
 })
 // Por último, vamos a exportarlo:

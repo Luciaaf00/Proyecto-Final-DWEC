@@ -7,11 +7,23 @@ body{
     display: grid;
     
 }
+header{
+    .nav-link{
+       color:white;
+    }
+    width: 100%;
+    height: ;
+}
 
 .container{
     align-self: center;
     justify-self: center;
-    font-family:  'Franklin Gothic Medium';
+    h2{
+        font-family:  $letraTitulo;
+    }
+    p{
+        font-family:  $letraParrafo;
+    }
 }
 
 ul{

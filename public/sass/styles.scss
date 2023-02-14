@@ -7,24 +7,43 @@ body{
     display: grid;
     
 }
-header{
-    .nav-link{
-       color:white;
-    }
-    width: 100%;
-    height: ;
+span{
+    font-family: $letraTitulo;
+    font-size: 20px;
 }
+nav{
+    color: white;
+    font-size: $letraParrafo;
+    #login{
+        align-items: center;
+        justify-content: center;
+    }
+}
+.carousel-inner{
+    img{
+        width: 100%;
+        height: auto;
+        filter: brightness(30%);
+    }
+    #texto{     
+        color: white;
+    }
 
-.container{
-    align-self: center;
-    justify-self: center;
-    h2{
-        font-family:  $letraTitulo;
+}
+.row{
+    img{
+        height: 14em;
+      border-radius: 5px;  
+    }
+    h5{
+        font-family: $letraTitulo;
+        
     }
     p{
-        font-family:  $letraParrafo;
+        font-family: $letraParrafo;
     }
 }
+
 
 ul{
     

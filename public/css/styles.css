@@ -8,6 +8,8 @@ span {
 nav {
   color: white;
   font-size: Verdana; }
+  nav span {
+    color: #FF0000; }
   nav #login {
     align-items: center;
     justify-content: center; }
@@ -26,5 +28,10 @@ nav {
   font-family: Franklin Gothic Medium; }
 .row p {
   font-family: Verdana; }
+
+#footer {
+  color: white; }
+  #footer a {
+    color: white; }
 
 /*# sourceMappingURL=styles.css.map */

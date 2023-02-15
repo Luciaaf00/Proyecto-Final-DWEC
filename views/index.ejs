@@ -1,51 +1,4 @@
-<!doctype html>
-<html lang="es">
-
-<head>
-  <title>PinPanPunShop</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/css/styles.css">
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-</head>
-
-<body>
-  
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <!--Icono-->
-        <div class="navbar-brand">
-          <i class="bi bi-valentine"></i>
-          <span class="text-warning">PinPanPunShop</span>
-        </div>
-        <!--boton del menú-->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Elementos del menú colapsable -->
-        <div class="collapse navbar-collapse" id="menu">
-          <ul class="navbar-nav me-auto p-3">
-             <li class="navbar-item"><a class="nav-link active" href="#">Inicio</a></li>
-             <li class="navbar-item"><a class="nav-link" href="#">Manga</a></li>
-             <li class="navbar-item"><a class="nav-link" href="#">Figuras</a></li>
-             <li class="navbar-item"><a class="nav-link" href="#">Juegos</a></li> 
-          </ul>
-          <hr class="text-white-50">
-
-          <div class="col-lg-3 d-flex flex-row justify-content-center alig-items-center" id="login">
-            <button type="button" class="btn btn-danger m-2">Accede</button>
-            <button type="button" class="btn btn-danger m-2">Registrate</button>
-          </div>
-          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 p-3">
-            <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-          </form>
-        </div>
-      </div>
-    </nav>
+<%- include("template/cabecera") %>
   <main>
 <!-- Foto introducción  -->
       <div class="carousel-inner">
@@ -62,7 +15,7 @@
       <hr>
   <!-- Opciones -->
   <hr class="text-white-50">
-  <div class="row">
+  <div class="row p-3">
   <div class="col-md-4">
     <div class="card mb-4 box-shadow">
       <img class="card-img-top" src="/images/figurita_.png" alt="Figurita de anime de una chica" title>
@@ -111,38 +64,4 @@
 </div>
 
   </main>
-  <footer>
-    <div class="footer">
-                <!-- Redes sociales -->
-                <ul class="navbar-nav flex-row flex-wrap text-light">
-                  <li class="nav-item col-6 col-lg-auto p-3">
-                    <i class="bi bi-twitter"></i>
-                    <small class="d-md-none ms-2">Twitter</small>
-                  </li>
-                  <li class="nav-item col-6 col-lg-auto p-3">
-                    <i class="bi bi-instagram"></i>
-                    <small class="d-md-none ms-2">Instragram</small>
-                  </li>
-                  <li class="nav-item col-6 col-lg-auto p-3">
-                    <i class="bi bi-tiktok"></i>
-                    <small class="d-md-none ms-2">TikTok</small>
-                  </li>
-                  <li class="nav-item col-6 col-lg-auto p-3">
-                    <i class="bi bi-facebook"></i>
-                    <small class="d-md-none ms-2">Facebook</small>
-                  </li>
-                </ul>
-    </div>
-  </footer>
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
-  <script src="../public/js/script_buscador.js"></script>
-</body>
-
-</html>
+  <%- include("template/footer") %>

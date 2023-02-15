@@ -14,6 +14,9 @@ span{
 nav{
     color: white;
     font-size: $letraParrafo;
+    span{
+        color: #FF0000;
+    }
     #login{
         align-items: center;
         justify-content: center;
@@ -45,6 +48,9 @@ nav{
 }
 
 
-ul{
-    
+#footer{
+    color: white;
+    a{
+        color: white;
+    }
 }

@@ -18,18 +18,18 @@ router.get('/', async (req, res) => {
 router.get('/crear', (req, res) => {
     res.render('crear');
  })
-   router.post('/', async (req, res) => {
-       const body = req.body
-       
-       console.log(body)
-       try {
-           const mangaDB = new Manga(body)
-           await mangaDB.save()
-           res.redirect('/manga')
-       } catch (error) {
-           console.log('error', error)
-       }
-   })
+router.post('/', async (req, res) => {
+    const body = req.body
+    
+    console.log(body)
+    try {
+        const mangaDB = new Manga(body)
+        await mangaDB.save()
+        res.redirect('/manga')
+    } catch (error) {
+        console.log('error', error)
+    }
+})
  //view
  router.get('/:id', async(req, res) => {
      const id = req.params.id

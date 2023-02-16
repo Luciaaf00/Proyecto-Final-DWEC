@@ -1,0 +1,72 @@
+<%- include("template/cabecera") %>
+<div class="container">
+    <h1>Detalles del Manga</h1>
+    <% if(error){ %>
+        <%= mensaje %>
+        <a href="/manga" class="btn btn-secondary btn-block my-2">Volver</a>
+    <% } %>
+    <% if(!error) {%>
+        <form id="editar">
+            <input type="text" value="<%= manga.titulo %>" class="form-class my-2" name="titulo" id="tituloInput">
+            <input type="text" value="<%= manga.autor %>" class="form-class my-2" name="autor" id="autorInput">
+            <input type="text" value="<%= manga.numPagina %>" class="form-class my-2" name="numPagina" id="numPaginaInput">
+            <input type="text" value="<%= manga.editorial %>" class="form-class my-2" name="editorial" id="editorialInput">
+            <input type="text" value="<%= manga.tipoTapa %>" class="form-class my-2" name="tipoTapa" id="tipoTapaInput">
+            <input type="text" value="<%= manga.tamanio %>" class="form-class my-2" name="tamanio" id="tamanioInput">
+            <input type="text" value="<%= manga.precio %>" class="form-class my-2" name="precio" id="precioInput">
+            <button type="submit" class="btn btn-warning btn-sm">Editar</button>
+        </form>
+        <hr>
+        <button class="btn btn-danger btn-sm" data-id="<%= manga.id %>">Borrar</button>
+        
+</div>
+<%- include("template/footer") %>
+<script>
+    const btnEliminar= document.querySelector('.btn-danger')
+    btnEliminar.addEventListener('click', async () => {
+        console.log(btnEliminar.dataset.id)
+        try {
+            const data=await fetch (`/manga/${btnEliminar.dataset.id}`, {
+                method:'delete'
+            })
+            const res=await data.json()
+            console.log(res)
+            if(res.estado){
+                window.location.href='/manga'
+            }else{
+                console.log(res)
+            }
+
+        }catch(error){
+            console.log(error)
+        }
+    })
+
+    const formEditar = document.querySelector('#editar');
+            formEditar.addEventListener('submit', async (e) => {
+                e.preventDefault()
+                const titulo = formEditar.elements['titulo'].value
+                const autor = formEditar.elements['autor'].value
+                const numPagina = formEditar.elements['numPagina'].value
+                const editorial = formEditar.elements['editorial'].value
+                const categoria= formEditar.elements['categoria'].value
+                const tipoTapa = formEditar.elements['tipoTapa'].value
+                const tamanio = formEditar.elements['tamanio'].value
+                const precio = formEditar.elements['precio'].value
+                const id = formEditar.dataset.id
+                const data = await fetch(`/manga/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ nombre, tipo, descripcion })
+                })
+                const res = await data.json()
+                if (res.estado) {
+                    window.location.href = '/manga'
+                } else {
+                    console.log(res)
+                }
+    })
+
+</script>

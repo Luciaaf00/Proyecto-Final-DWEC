@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 })
 //create
 router.get('/crear', (req, res) => {
-    res.render('crear');
+    res.render('manga/crear');
  })
 router.post('/', async (req, res) => {
     const body = req.body
@@ -36,13 +36,13 @@ router.post('/', async (req, res) => {
      try {
          const mangaDB = await Manga.findOne({ _id: id })
          console.log(mangaDB)
-         res.render('detalle', {
+         res.render('manga/detalle', {
              manga: mangaDB,
              error: false
          })
      } catch (error) {
          console.log('Se ha producido un error', error)
-         res.render('detalle', {
+         res.render('manga/detalle', {
              error: true,
              mensaje: 'Manga no encontrado!'
          })

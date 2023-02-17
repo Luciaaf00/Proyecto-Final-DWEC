@@ -1,12 +1,12 @@
-<%- include("template/cabecera") %>
+<%- include("../template/cabecera") %>
 <div class="container">
     <h1>Detalles del Manga</h1>
     <% if(error){ %>
         <%= mensaje %>
         <a href="/manga" class="btn btn-secondary btn-block my-2">Volver</a>
-    <% } %>
-    <% if(!error) {%>
-        <form id="editar">
+    <% }else{ %>
+    
+        <form id="editar" method="post">
             <input type="text" value="<%= manga.titulo %>" class="form-class my-2" name="titulo" id="tituloInput">
             <input type="text" value="<%= manga.autor %>" class="form-class my-2" name="autor" id="autorInput">
             <input type="text" value="<%= manga.numPagina %>" class="form-class my-2" name="numPagina" id="numPaginaInput">
@@ -20,7 +20,7 @@
         <button class="btn btn-danger btn-sm" data-id="<%= manga.id %>">Borrar</button>
         
 </div>
-<%- include("template/footer") %>
+
 <script>
     const btnEliminar= document.querySelector('.btn-danger')
     btnEliminar.addEventListener('click', async () => {
@@ -70,3 +70,5 @@
     })
 
 </script>
+<% } %>
+<%- include("../template/footer") %>

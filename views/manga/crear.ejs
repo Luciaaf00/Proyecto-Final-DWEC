@@ -1,18 +1,46 @@
 <%- include("../template/cabecera") %>
 <div class="container">
     <h1>Añadir manga</h1>
-
-    <form action="/manga" method="post">
-        <input type="text"placeholder="Título del manga" class="form-class" name="titulo">
-        <input type="text"placeholder="Nombre del autor" class="form-class" name="autor">
-        <input type="text"placeholder="Número de páginas" class="form-class" name="numPagina">
-        <input type="text"placeholder="Nombre de la editorial" class="form-class" name="editorial">
-        <input type="text"placeholder="Categoría" class="form-class" name="categoria">
-        <input type="text"placeholder="Tipo de tapa" class="form-class" name="tipoTapa">
-        <input type="text"placeholder="Tamaño" class="form-class" name="tamanio">
-        <input type="text"placeholder="Precio del manga" class="form-class" name="precio">
-        <button type="submit" class="btn btn-danger">Añadir</button>
-    </form>
+        <div>
+            <form action="/manga" method="post">
+                <div class="form-group p-2">
+                    <label for="titulo">Título del manga:</label>
+                    <input type="text"placeholder="Introduce el título del manga" class="form-class" name="titulo" id="formulario_crear">
+                </div>
+                <div class="form-group p-2">
+                    <label for="autor">Nombre del autor:</label>
+                    <input type="text" placeholder="Introduce el autor" class="form-class" name="autor"  id="formulario_crear">
+                </div>
+                <div class="form-group p-2">
+                    <label for="numPagina">Número de páginas:</label>
+                    <input type="text" placeholder="Introduce el número de páginas" class="form-class" name="numPagina"  id="formulario_crear">
+                </div>
+                <div class="form-group p-2">
+                    <label for="editorial">Nombre de la editorial:</label>
+                    <input type="text" placeholder="Introduce editorial" class="form-class" name="editorial"  id="formulario_crear">
+                </div>
+                <div class="form-group p-2">
+                    <label for="categoria">Categoría del manga:</label>
+                    <input type="text"placeholder="Introduce categoría" class="form-class" name="categoria"  id="formulario_crear">
+                </div>
+                <div class="form-group p-2">
+                    <label for="tipoTapa">Tipo de tapa:</label>
+                    <input type="text" placeholder="Tipo de tapa" class="form-class" name="tipoTapa"  id="formulario_crear">
+                    <small id="tipoTapa" class="form-text text-muted">Tapa blanda o tapa dura.</small>
+                </div>
+                <div class="form-group p-2">
+                    <label for="categoria">Tamaño del manga:</label>
+                    <input type="text" placeholder="Introduce tamaño" class="form-class" name="categoria"  id="formulario_crear">
+                    <small id="categoria" class="form-text text-muted">Tamaño bolsillo o tamaño rústico.</small>
+                </div>
+                <div class="form-group p-2">
+                    <label for="precio">Categoría del manga:</label>
+                    <input type="text"placeholder="Introduce precio" class="form-class" name="precio"  id="formulario_crear">
+                </div>
+                <button type="submit" class="btn btn-danger">Añadir</button>
+            </form>
+        </div>
+    
 
 </div>
     

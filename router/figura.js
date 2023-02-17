@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
     try {
         const arrayFiguraDB = await Figura.find();
         console.log(arrayFiguraDB);
-        res.render("figura", { 
+        res.render("figura/figura", { 
             arrayFigura: arrayFiguraDB
         })
     } catch (error) {
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 })
 //create
 router.get('/crear', (req, res) => {
-    res.render('crear');
+    res.render('figura/crear');
  })
    router.post('/', async (req, res) => {
        const body = req.body
@@ -35,13 +35,13 @@ router.get('/crear', (req, res) => {
      try {
          const figuraDB = await Figura.findOne({ _id: id })
          console.log(figuraDB)
-         res.render('detalle', {
+         res.render('figura/detalle', {
              figura: figuraDB,
              error: false
          })
      } catch (error) {
          console.log('Se ha producido un error', error)
-         res.render('detalle', {
+         res.render('figura/detalle', {
              error: true,
              mensaje: 'Figura no encontrado!'
          })

@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
     try {
         const arrayMangaDB = await Manga.find();
         console.log(arrayMangaDB);
-        res.render("juego_mesa", { 
+        res.render("juego_mesa/juego_mesa", { 
             arrayManga: arrayMangaDB
         })
     } catch (error) {
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 })
 //create
 router.get('/crear', (req, res) => {
-    res.render('crear');
+    res.render('juego_mesa/crear');
  })
    router.post('/', async (req, res) => {
        const body = req.body
@@ -35,13 +35,13 @@ router.get('/crear', (req, res) => {
      try {
          const juego_mesaDB = await Manga.findOne({ _id: id })
          console.log(juego_mesaDB)
-         res.render('detalle', {
+         res.render('juego_mesa/detalle', {
              juego_mesa: juego_mesaDB,
              error: false
          })
      } catch (error) {
          console.log('Se ha producido un error', error)
-         res.render('detalle', {
+         res.render('juego_mesa/detalle', {
              error: true,
              mensaje: 'Manga no encontrado!'
          })

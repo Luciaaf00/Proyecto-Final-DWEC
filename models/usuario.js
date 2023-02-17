@@ -1,15 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const usuarioSchema = new Schema({
+const ropaSchema = new Schema({
     nombre: String,
-    correo: String,
-    pass:String,
-    direccion:String,
-    telefono: String
+    tipo_prenda: String,
+    talla: String,
+    color: String
 })
 
 //Creamos el modelo
-const Usuario = mongoose.model('usuario', usuarioSchema, "usuario");
+const Ropa = mongoose.model('ropa', ropaSchema, "ropa");
 
-module.exports = Usuario;
+module.exports = Ropa;

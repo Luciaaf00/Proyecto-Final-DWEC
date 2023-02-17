@@ -27,7 +27,7 @@ app.set("view engine", "ejs")
 
 //Llamadas a las rutas
 app.use('/', require('./router/rutas'))
-//app.use('/usuario', require('./router/usuario'))
+//app.use('/ropa', require('./router/ropa'))
 app.use('/manga',require('./router/manga'))
 //app.use('/juego_mesa',require('./router/juego_mesa'))
 //app.use('/figura',require('./router/figura'))

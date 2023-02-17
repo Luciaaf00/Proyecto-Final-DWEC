@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ropaSchema = new Schema({
-    nombre: String,
     tipo_prenda: String,
     talla: String,
-    color: String
+    color: String,
+    precio: String
 })
 
 //Creamos el modelo

@@ -27,12 +27,12 @@
 
                     </form>
                     <hr>
-                    <button class="btn btn-danger btn-sm" data-id="<%= manga.id %>">Borrar</button>
+                    <button class="btn btn-danger btn-sm" id="eliminar" data-id="<%= manga.id %>">Borrar</button>
                     <% } %>
     </div>
     <%- include("../template/footer") %>
     <script>
-        const btnEliminar = document.querySelector('.btn-danger')
+        const btnEliminar = document.querySelector('#eliminar')
         btnEliminar.addEventListener('click', async () => {
             console.log(btnEliminar.dataset.id)
             try {

@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     try {
         const arrayMangaDB = await Manga.find();
         console.log(arrayMangaDB);
-        res.render("manga", { 
+        res.render("manga/manga", { 
             arrayManga: arrayMangaDB
         })
     } catch (error) {
@@ -93,3 +93,4 @@ router.put('/:id', async (req, res) => {
         })
     }
 })
+module.exports = router;

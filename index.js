@@ -27,10 +27,10 @@ app.set("view engine", "ejs")
 
 //Llamadas a las rutas
 app.use('/', require('./router/rutas'))
-app.use('/usuario', require('./router/usuario'))
-app.use('/manga',require('./models/manga'))
-app.use('/juego_mesa',require('./models/juego_mesa'))
-app.use('/figura',require('./models/figura'))
+//app.use('/usuario', require('./router/usuario'))
+app.use('/manga',require('./router/manga'))
+//app.use('/juego_mesa',require('./router/juego_mesa'))
+//app.use('/figura',require('./router/figura'))
 
 
 app.listen(port, () => {

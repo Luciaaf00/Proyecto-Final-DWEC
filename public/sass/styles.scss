@@ -46,8 +46,16 @@ nav{
     }
 }
 
-#formulario_crear{
-    size: 80px;
+h1{
+    font-family: $letraTitulo;
+}
+label{
+    font-family: $letraParrafo;
+    font-weight: bold;
+}
+#small-s{
+    font-size: 10px;
+    max-width: 50%;
 }
 
 #footer{

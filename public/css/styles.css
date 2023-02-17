@@ -29,6 +29,17 @@ nav {
 .row p {
   font-family: Verdana; }
 
+h1 {
+  font-family: Franklin Gothic Medium; }
+
+label {
+  font-family: Verdana;
+  font-weight: bold; }
+
+#small-s {
+  font-size: 10px;
+  max-width: 50%; }
+
 #footer {
   color: white; }
   #footer a {

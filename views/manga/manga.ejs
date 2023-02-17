@@ -10,41 +10,42 @@
 </div>
 <div class="container">
     <h1>Mangas</h1>
-    <a  class="btn btn-danger" href="/manga/crear">Añadir manga</a>
-    <table class="table table-hover table-dark">
-        <thead>
-            <tr class="table-danger">
-              <th scope="col">Título</th>
-              <th scope="col">Autor</th>
-              <th scope="col">Número de páginas</th>
-              <th scope="col">Editorial</th>
-              <th scope="col">Categoría</th>
-              <th scope="col">Tipo de tapa</th>
-              <th scope="col">Tamaño</th>
-              <th scope="col">Precio</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <% if (arrayManga.length>0) {%>
-                    <% arrayManga.forEach(manga =>{ %>
-              <td><%= manga.titulo  %></td>
-              <td><%= manga.autor  %></td>
-              <td><%= manga.numPagina  %></td>
-              <td><%= manga.editorial  %></td>
-              <td><%= manga.categoria  %></td>
-              <td><%= manga.tipoTapa  %></td>
-              <td><%= manga.tamanio  %></td>
-              <td><%= manga.precio  %></td>
-              <td><a class="btn btn-danger btn-sm" href="/manga/<%= manga.id %>">Editar/Eliminar</a></td>
-             
-            </tr>
-            <% }) %>
-            <% } %>
-          </tbody>
-    </table>
-
+    <a  class="btn btn-danger m-2" href="/manga/crear">Añadir manga</a>
+    <div class="table-responsive-sm table-responsive-md">
+      <table class="table table-hover table-light">
+          <thead>
+              <tr class="table-dark">
+                <th scope="col">Título</th>
+                <th scope="col">Autor</th>
+                <th scope="col">Número de páginas</th>
+                <th scope="col">Editorial</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Tipo de tapa</th>
+                <th scope="col">Tamaño</th>
+                <th scope="col">Precio</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                  <% if (arrayManga.length>0) {%>
+                      <% arrayManga.forEach(manga =>{ %>
+                <td><%= manga.titulo  %></td>
+                <td><%= manga.autor  %></td>
+                <td><%= manga.numPagina  %></td>
+                <td><%= manga.editorial  %></td>
+                <td><%= manga.categoria  %></td>
+                <td><%= manga.tipoTapa  %></td>
+                <td><%= manga.tamanio  %></td>
+                <td><%= manga.precio  %></td>
+                <td><a class="btn btn-danger btn-sm" href="/manga/<%= manga.id %>">Editar/Eliminar</a></td>
+              
+              </tr>
+              <% }) %>
+              <% } %>
+            </tbody>
+      </table>
+  </div>
 
     
 </div>

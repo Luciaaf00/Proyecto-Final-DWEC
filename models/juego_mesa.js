@@ -6,7 +6,7 @@ const juegoMesaSchema = new Schema({
     categoria: String,
     descripcion: String,
     precio: String,
-    editorial: String,
+    fabricante: String,
     numero_jugadores:String
 })
 

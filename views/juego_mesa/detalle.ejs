@@ -1,0 +1,98 @@
+<%- include("../template/cabecera") %>
+    <div class="container">
+        <h1 class="d-flex flex-row justify-content-center alig-items-center">Detalles de los juegos de mesa</h1>
+        <% if(error){ %>
+            <%= mensaje %>
+                <a href="/juego_mesa" class="btn btn-secondary btn-block my-2">Volver</a>
+                <% }else{ %>
+                    <div class="d-flex flex-row justify-content-center alig-items-center">
+                        <form id="editar" method="post"  data-id="<%= juego_mesa.id %>">
+                            <div class="form-group p-2">
+                                <label for="nombre" class="text-danger p-1 me-5">Nombre del juego:</label><br>
+                                <input type="text" value="<%= juego_mesa.nombre %>" class="form-class my-2" name="nombre" id="nombreInput" size="50%">                            
+                            </div>
+                            <div class="form-group p-2">
+                                <label for="categoria" class="text-danger p-1">Categoría del juego:</label><br>
+                                <input type="text" value="<%= juego_mesa.categoria %>" class="form-class my-2" name="categoria" id="categoriaInput" size="50%">                            
+                                <small id="small-s"  class="form-text text-muted p-1">Las categorías que se tienen que introducir son Acción, Arcade, Deportivo, Estrategia, Simulación,<br> Juegos musicales, Dados o Rol</small>
+
+                            </div>
+                            <div class="form-group p-2">
+                                <label for="descripcion" class="text-danger p-1">Descripción del juego:</label><br>
+                                <input type="text" value="<%= juego_mesa.categoria %>" class="form-class my-2" name="descripcion" id="descripcionInput" size="50%">                            
+                            </div>
+                            <div class="form-group p-2" >
+                                <label for="precio" class="text-danger p-1">Precio del juego:</label><br>
+                                <input type="text" value="<%= juego_mesa.precio %>" class="form-class my-2" name="precio" id="precioInput" size="50%"> <br>                               
+            
+                            </div>
+                            <div class="form-group p-2">
+                                <label for="fabricante" class="text-danger p-1 mr-">Fabricante del juego:</label><br>
+                                <input type="text" value="<%= juego_mesa.fabricante %>" class="form-class my-2" name="fabricante" id="fabricanteInput" size="50%">     <br>                           
+                                <small id="small-s"  class="form-text text-muted p-1 m-1">Las editoriales que debes introducir son Asmodee, Devir, Edge Ent o Elevent Force.</small>
+
+            
+                            </div>
+                            <div class="form-group p-2" >
+                                <label for="numero_jugadores" class="text-danger p-1">Número de jugadores:</label><br>
+                                <input type="text" value="<%= juego_mesa.numero_jugadores %>" class="form-class my-2" name="numero_jugadores" id="numero_jugadoresInput" size="50%"> <br>                               
+                                <small id="small-s"  class="form-text text-muted p-1">Tapa blanda o tapa dura.</small>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-warning btn-sm m-2">Editar</button>
+                        </form>
+                    </div>
+                    <hr>
+                    <button class="btn btn-danger btn-sm" id="eliminar" data-id="<%= juego_mesa.id %>">Borrar</button>
+                    <% } %>
+    </div>
+    <%- include("../template/footer") %>
+    <script>
+        const btnEliminar = document.querySelector('#eliminar')
+        btnEliminar.addEventListener('click', async () => {
+            console.log(btnEliminar.dataset.id)
+            try {
+                // https://developer.mozilla.org/es/docs/Web/API/HTMLElement/dataset
+                const data = await fetch(`/juego_mesa/${btnEliminar.dataset.id}`, {
+                    method: 'delete'
+                })
+                const res = await data.json()
+                console.log(res)
+                if (res.estado) {
+                    window.location.href = '/juego_mesa'
+                } else {
+                    console.log(res)
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        })
+
+
+        const formEditar = document.querySelector('#editar');
+        formEditar.addEventListener('submit', async (e) => {
+            e.preventDefault()
+            const nombre = formEditar.elements['nombre'].value
+            const categoria = formEditar.elements['categoria'].value
+            const descripcion = formEditar.elements['descripcion'].value
+            const precio = formEditar.elements['precio'].value
+            const fabricante = formEditar.elements['fabricante'].value
+            const numero_jugadores = formEditar.elements['numero_jugadores'].value
+            const id = formEditar.dataset.id
+            const data = await fetch(`/juego_mesa/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nombre, categoria, descripcion, precio, fabricante, numero_jugadores})
+            })
+            const res = await data.json()
+            if (res.estado) {
+                window.location.href = '/juego_mesa'
+            } else {
+                console.log(res)
+            }
+        })
+
+    </script>
+

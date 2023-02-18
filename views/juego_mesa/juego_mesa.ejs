@@ -17,9 +17,10 @@
               <tr class="table-dark">
                 <th scope="col">Nombre</th>
                 <th scope="col">Categoría</th>
-                <th scope="col">Fabricante</th>
-                <th scope="col">Precio</th>
                 <th scope="col">Descripción</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Fabricante</th>
+                <th scope="col">Número de jugadores</th>
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -29,10 +30,12 @@
                       <% arrayJuego_mesa.forEach(juego_mesa =>{ %>
                 <td><%= juego_mesa.nombre  %></td>
                 <td><%= juego_mesa.categoria  %></td>
+                <td><%= juego_mesa.descripcion  %></td>
                 <td><%= juego_mesa.fabricante  %></td>
                 <td><%= juego_mesa.precio  %></td>
-                <td><%= juego_mesa.descripcion  %></td>
-                <td><a class="btn btn-danger btn-sm" href="/juego_mesa/<%= juego_mesa.id %>">Editar/Eliminar</a></td>
+                <td><%= juego_mesa.numero_jugadores  %></td>
+
+                <td><a class="btn btn-warning btn-sm" href="/juego_mesa/<%= juego_mesa.id %>">Editar/Eliminar</a></td>
               
               </tr>
               <% }) %>

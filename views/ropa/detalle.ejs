@@ -1,0 +1,83 @@
+<%- include("../template/cabecera") %>
+    <div class="container">
+        <h1 class="d-flex flex-row justify-content-center alig-items-center">Detalles del Manga</h1>
+        <% if(error){ %>
+            <%= mensaje %>
+                <a href="/ropa" class="btn btn-secondary btn-block my-2">Volver</a>
+                <% }else{ %>
+                    <div class="d-flex flex-row justify-content-center alig-items-center">
+                        <form method="post" id="editar" data-id="<%= ropa.id %>">
+                            <div class="form-group p-2">
+                                <label for="tipo_prenda" class="text-danger p-1 me-5">Tipo de prenda:</label><br>
+                                <input type="text" value="<%= ropa.tipo_prenda %>" class="form-class my-2" name="tipo_prenda" id="tipo_prendaInput" size="50%">                            
+                            </div>
+                            <div class="form-group p-2">
+                                <label for="talla" class="text-danger p-1">Talla de la prenda:</label><br>
+                                <input type="text" value="<%= ropa.talla %>" class="form-class my-2" name="talla" id="tallaInput" size="50%"><br>
+                                <small id="small-s"  class="form-text text-muted p-1">Las tallas son XXS, XS, S, M, L, XL, XXL</small>
+
+                            </div>
+                            <div class="form-group p-2">
+                                <label for="color" class="text-danger p-1">Color de la prenda:</label><br>
+                                <input type="text" value="<%= ropa.color %>" class="form-class my-2" name="color" id="colorInput" size="50%">                            
+                            </div>
+                            <div class="form-group p-2" >
+                                <label for="precio" class="text-danger p-1">Precio de la prenda:</label><br>
+                                <input type="text" value="<%= ropa.precio %>" class="form-class my-2" name="precio" id="precioInput" size="50%">                                
+            
+                            </div>
+                           
+                            <button type="submit" class="btn btn-warning btn-sm m-2">Editar</button>
+                        </form>
+                    </div>
+                    <hr>
+                    <button class="btn btn-danger btn-sm" id="eliminar" data-id="<%= ropa.id %>">Borrar</button>
+                    <% } %>
+    </div>
+    <%- include("../template/footer") %>
+    <script>
+        const btnEliminar = document.querySelector('#eliminar')
+        btnEliminar.addEventListener('click', async () => {
+            console.log(btnEliminar.dataset.id)
+            try {
+                // https://developer.mozilla.org/es/docs/Web/API/HTMLElement/dataset
+                const data = await fetch(`/ropa/${btnEliminar.dataset.id}`, {
+                    method: 'delete'
+                })
+                const res = await data.json()
+                console.log(res)
+                if (res.estado) {
+                    window.location.href = '/ropa'
+                } else {
+                    console.log(res)
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        })
+
+
+        const formEditar = document.querySelector('#editar');
+        formEditar.addEventListener('submit', async (e) => {
+            e.preventDefault()
+            const tipo_prenda = formEditar.elements['tipo_prenda'].value
+            const talla = formEditar.elements['talla'].value
+            const color = formEditar.elements['color'].value
+            const precio = formEditar.elements['precio'].value
+            const id = formEditar.dataset.id
+            const data = await fetch(`/ropa/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ tipo_prenda, talla, color, precio})
+            })
+            const res = await data.json()
+            if (res.estado) {
+                window.location.href = '/ropa'
+            } else {
+                console.log(res)
+            }
+        })
+
+    </script>

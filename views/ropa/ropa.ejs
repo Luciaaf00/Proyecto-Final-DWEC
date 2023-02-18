@@ -9,7 +9,7 @@
     <% } %>
 </div>
 <div class="container ">
-    <h1 class="d-flex flex-row justify-content-center alig-items-center">Ropas</h1>
+    <h1 class="d-flex flex-row justify-content-center alig-items-center">Ropa</h1>
     <a  class="btn btn-danger m-2 d-flex flex-row justify-content-center alig-items-center" href="/ropa/crear">Añadir ropa</a>
     <div class="table-responsive-sm table-responsive-md">
       <table class="table table-hover table-light">
@@ -30,7 +30,7 @@
                 <td><%= ropa.talla  %></td>
                 <td><%= ropa.color  %></td>
                 <td><%= ropa.precio  %></td>
-                <td><a class="btn btn-danger btn-sm" href="/ropa/<%= ropa.id %>">Editar/Eliminar</a></td>
+                <td><a class="btn btn-warning btn-sm" href="/ropa/<%= ropa.id %>">Editar/Eliminar</a></td>
               
               </tr>
               <% }) %>

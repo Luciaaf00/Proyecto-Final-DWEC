@@ -1,0 +1,34 @@
+<%- include("../template/cabecera") %>
+<div class="container ">
+    <h1 class="d-flex flex-row justify-content-center alig-items-center">Añadir ropa</h1>
+        <div class="d-flex flex-row justify-content-center alig-items-center">
+            <form action="/ropa" method="post">
+                <div class="form-group p-2">
+                    <label for="tipo_prenda" class="text-danger p-1 me-5">Tipo de prenda:</label><br>
+                    <input type="text" placeholder="Introduce el tipo de prenda" class="form-class m-1" id="tipo_prenda" name="tipo_prenda" size="50%">
+                </div>
+                <div class="form-group p-2">
+                    <label for="talla" class="text-danger p-1">Talla de la prenda:</label><br>
+                    <input type="text" placeholder="Introduce talla" class="form-class m-1" id="talla" name="talla" size="50%"><br>
+                    <small id="small-s"  class="form-text text-muted p-1">Las tallas son XXS, XS, S, M, L, XL, XXL</small>
+
+                </div>
+                <div class="form-group p-2">
+                    <label for="color" class="text-danger p-1">Color de la prenda:</label><br>
+                    <input type="text"  placeholder="Introduce el color" class="form-class m-1" id="color" name="color" size="50%">
+                </div>
+                <div class="form-group p-2" >
+                    <label for="precio" class="text-danger p-1">Precio de la prenda:</label><br>
+                    <input type="text" placeholder="Introduce precio" class="form-class m-1" id="precio" name="precio"  size="50%"><br>
+
+                </div>
+                
+                <button type="submit" class="btn btn-danger m-2">Añadir</button>
+            </form>
+        </div>
+    
+
+</div>
+    
+
+<%- include("../template/footer") %>

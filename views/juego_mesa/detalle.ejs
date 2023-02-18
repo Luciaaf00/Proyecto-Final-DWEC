@@ -1,6 +1,6 @@
 <%- include("../template/cabecera") %>
     <div class="container">
-        <h1 class="d-flex flex-row justify-content-center alig-items-center">Detalles de los juegos de mesa</h1>
+        <h1 class="d-flex flex-row justify-content-center alig-items-center">Detalle del juego de mesa</h1>
         <% if(error){ %>
             <%= mensaje %>
                 <a href="/juego_mesa" class="btn btn-secondary btn-block my-2">Volver</a>
@@ -13,7 +13,7 @@
                             </div>
                             <div class="form-group p-2">
                                 <label for="categoria" class="text-danger p-1">Categoría del juego:</label><br>
-                                <input type="text" value="<%= juego_mesa.categoria %>" class="form-class my-2" name="categoria" id="categoria" size="50%"><br>                    
+                                <input type="text" value="<%= juego_mesa.categoria %>" class="form-class my-2" name="categoria" id="categoria" size="50%"><br>
                                 <small id="small-s"  class="form-text text-muted p-1">Las categorías que se tienen que introducir son Acción, Arcade, Deportivo, Estrategia, Simulación,<br> Juegos musicales, Dados o Rol</small>
 
                             </div>
@@ -40,10 +40,11 @@
                             </div>
                             
                             <button type="submit" class="btn btn-warning btn-sm m-2">Editar</button>
+                            <button class="btn btn-danger btn-sm" id="eliminar" data-id="<%= juego_mesa.id %>">Borrar</button>
+                            <hr>
                         </form>
                     </div>
-                    <hr>
-                    <button class="btn btn-danger btn-sm" id="eliminar" data-id="<%= juego_mesa.id %>">Borrar</button>
+                    
                     <% } %>
     </div>
     <%- include("../template/footer") %>

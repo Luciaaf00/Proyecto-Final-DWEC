@@ -1,6 +1,6 @@
 <%- include("../template/cabecera") %>
     <div class="container">
-        <h1 class="d-flex flex-row justify-content-center alig-items-center">Detalles del Manga</h1>
+        <h1 class="d-flex flex-row justify-content-center alig-items-center">Detalle del Manga</h1>
         <% if(error){ %>
             <%= mensaje %>
                 <a href="/manga" class="btn btn-secondary btn-block my-2">Volver</a>
@@ -9,100 +9,117 @@
                         <form method="post" id="editar" data-id="<%= manga.id %>">
                             <div class="form-group p-2">
                                 <label for="titulo" class="text-danger p-1 me-5">Título del manga:</label><br>
-                                <input type="text" value="<%= manga.titulo %>" class="form-class my-2" name="titulo" id="titulo" size="50%">                            
+                                <input type="text" value="<%= manga.titulo %>" class="form-class my-2" name="titulo"
+                                    id="titulo" size="50%">
                             </div>
                             <div class="form-group p-2">
                                 <label for="autor" class="text-danger p-1">Nombre del autor:</label><br>
-                                <input type="text" value="<%= manga.autor %>" class="form-class my-2" name="autor" id="autor" size="50%">                            
+                                <input type="text" value="<%= manga.autor %>" class="form-class my-2" name="autor"
+                                    id="autor" size="50%">
                             </div>
                             <div class="form-group p-2">
                                 <label for="numPagina" class="text-danger p-1">Número de páginas:</label><br>
-                                <input type="text" value="<%= manga.numPagina %>" class="form-class my-2" name="numPagina" id="numPagina" size="50%">                            
+                                <input type="text" value="<%= manga.numPagina %>" class="form-class my-2"
+                                    name="numPagina" id="numPagina" size="50%">
                             </div>
-                            <div class="form-group p-2" >
+                            <div class="form-group p-2">
                                 <label for="editorial" class="text-danger p-1">Nombre de la editorial:</label><br>
-                                <input type="text" value="<%= manga.editorial %>" class="form-class my-2" name="editorial" id="editorial" size="50%"> <br>                               
-                                <small id="small-s"  class="form-text text-muted p-1">Las editoriales que se tienen que introducir son Ivrea, MILKY WAY EDICIONES,  Norma Editorial,<br> Panini Comics, Planeta De Agostini.</small>
-            
+                                <input type="text" value="<%= manga.editorial %>" class="form-class my-2"
+                                    name="editorial" id="editorial" size="50%"> <br>
+                                <small id="small-s" class="form-text text-muted p-1">Las editoriales que se tienen que
+                                    introducir son Ivrea, MILKY WAY EDICIONES, Norma Editorial,<br> Panini Comics,
+                                    Planeta De Agostini.</small>
+
                             </div>
                             <div class="form-group p-2">
                                 <label for="categoria" class="text-danger p-1 mr-">Categoría del manga:</label><br>
-                                <input type="text" value="<%= manga.categoria %>" class="form-class my-2" name="categoria" id="categoria" size="50%">     <br>                           
-                                <small id="small-s"  class="form-text text-muted p-1 m-1">Las categorías que debes introducir son Progresivo, Cyberpunk,
-                                     Ecchi, Furry, Gekiga, Gore,<br> Harem,  Harem reverso, Hentai, Kemono, Mahō shōjo, Victoriana Histórica, Realidad virtual, 
-                                     <br>Juego de Supervivencia, Romakome, Shōjo-ai o Yuri, Shōnen-ai y Yao, Spokon, Mecha o <br>Jidaimono.
-                                    </small>
-            
+                                <input type="text" value="<%= manga.categoria %>" class="form-class my-2"
+                                    name="categoria" id="categoria" size="50%"> <br>
+                                <small id="small-s" class="form-text text-muted p-1 m-1">Las categorías que debes
+                                    introducir son Progresivo, Cyberpunk,
+                                    Ecchi, Furry, Gekiga, Gore,<br> Harem, Harem reverso, Hentai, Kemono, Mahō shōjo,
+                                    Victoriana Histórica, Realidad virtual,
+                                    <br>Juego de Supervivencia, Romakome, Shōjo-ai o Yuri, Shōnen-ai y Yao, Spokon,
+                                    Mecha o <br>Jidaimono.
+                                </small>
+
                             </div>
-                            <div class="form-group p-2" >
+                            <div class="form-group p-2">
                                 <label for="tipoTapa" class="text-danger p-1">Tipo de tapa:</label><br>
-                                <input type="text" value="<%= manga.tipoTapa %>" class="form-class my-2" name="tipoTapa" id="tipoTapa" size="50%"> <br>                               
-                                <small id="small-s"  class="form-text text-muted p-1">Tapa blanda o tapa dura.</small>
+                                <input type="text" value="<%= manga.tipoTapa %>" class="form-class my-2" name="tipoTapa"
+                                    id="tipoTapa" size="50%"> <br>
+                                <small id="small-s" class="form-text text-muted p-1">Tapa blanda o tapa dura.</small>
                             </div>
                             <div class="form-group p-2">
                                 <label for="tamanio" class="text-danger p-1">Tamaño del manga:</label><br>
-                                <input type="text" value="<%= manga.tamanio %>" class="form-class my-2" name="tamanio" id="tamanio" size="50%"> <br>                               
-                                <small id="small-s" class="form-text text-muted p-1">Tamaño bolsillo o tamaño rústico.</small>
+                                <input type="text" value="<%= manga.tamanio %>" class="form-class my-2" name="tamanio"
+                                    id="tamanio" size="50%"> <br>
+                                <small id="small-s" class="form-text text-muted p-1">Tamaño bolsillo o tamaño
+                                    rústico.</small>
                             </div>
                             <div class="form-group p-2">
                                 <label for="precio" class="text-danger p-1">Precio del manga:</label><br>
-                                <input type="text" value="<%= manga.precio %>" class="form-class my-2" name="precio" id="precio" size="50%">                            </div>
+                                <input type="text" value="<%= manga.precio %>" class="form-class my-2" name="precio"
+                                    id="precio" size="50%">
+                            </div>
                             <button type="submit" class="btn btn-warning btn-sm m-2">Editar</button>
+
+                            <button class="btn btn-danger btn-sm" id="eliminar"
+                                data-id="<%= manga.id %>">Borrar</button>
+                            <hr>
                         </form>
                     </div>
-                    <hr>
-                    <button class="btn btn-danger btn-sm" id="eliminar" data-id="<%= manga.id %>">Borrar</button>
+
                     <% } %>
     </div>
     <%- include("../template/footer") %>
-    <script>
-        const btnEliminar = document.querySelector('#eliminar')
-        btnEliminar.addEventListener('click', async () => {
-            console.log(btnEliminar.dataset.id)
-            try {
-                // https://developer.mozilla.org/es/docs/Web/API/HTMLElement/dataset
-                const data = await fetch(`/manga/${btnEliminar.dataset.id}`, {
-                    method: 'delete'
+        <script>
+            const btnEliminar = document.querySelector('#eliminar')
+            btnEliminar.addEventListener('click', async () => {
+                console.log(btnEliminar.dataset.id)
+                try {
+                    // https://developer.mozilla.org/es/docs/Web/API/HTMLElement/dataset
+                    const data = await fetch(`/manga/${btnEliminar.dataset.id}`, {
+                        method: 'delete'
+                    })
+                    const res = await data.json()
+                    console.log(res)
+                    if (res.estado) {
+                        window.location.href = '/manga'
+                    } else {
+                        console.log(res)
+                    }
+                } catch (error) {
+                    console.log(error)
+                }
+            })
+
+
+            const formEditar = document.querySelector('#editar');
+            formEditar.addEventListener('submit', async (e) => {
+                e.preventDefault()
+                const titulo = formEditar.elements['titulo'].value
+                const autor = formEditar.elements['autor'].value
+                const numPagina = formEditar.elements['numPagina'].value
+                const editorial = formEditar.elements['editorial'].value
+                const categoria = formEditar.elements['categoria'].value
+                const tipoTapa = formEditar.elements['tipoTapa'].value
+                const tamanio = formEditar.elements['tamanio'].value
+                const precio = formEditar.elements['precio'].value
+                const id = formEditar.dataset.id
+                const data = await fetch(`/manga/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ titulo, autor, numPagina, editorial, categoria, tipoTapa, tamanio, precio })
                 })
                 const res = await data.json()
-                console.log(res)
                 if (res.estado) {
                     window.location.href = '/manga'
                 } else {
                     console.log(res)
                 }
-            } catch (error) {
-                console.log(error)
-            }
-        })
-
-
-        const formEditar = document.querySelector('#editar');
-        formEditar.addEventListener('submit', async (e) => {
-            e.preventDefault()
-            const titulo = formEditar.elements['titulo'].value
-            const autor = formEditar.elements['autor'].value
-            const numPagina = formEditar.elements['numPagina'].value
-            const editorial = formEditar.elements['editorial'].value
-            const categoria = formEditar.elements['categoria'].value
-            const tipoTapa = formEditar.elements['tipoTapa'].value
-            const tamanio = formEditar.elements['tamanio'].value
-            const precio = formEditar.elements['precio'].value
-            const id = formEditar.dataset.id
-            const data = await fetch(`/manga/${id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ titulo, autor, numPagina, editorial, categoria, tipoTapa, tamanio, precio })
             })
-            const res = await data.json()
-            if (res.estado) {
-                window.location.href = '/manga'
-            } else {
-                console.log(res)
-            }
-        })
 
-    </script>
-
+        </script>

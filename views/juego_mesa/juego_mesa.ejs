@@ -1,0 +1,46 @@
+<%- include("../template/cabecera") %>
+<div class="container">
+    <!--Si existen elementos en el array de Juego de mesa-->
+    <% if (arrayJuego_mesa.length > 0) { %>
+     <!--Haremos el foreach para recorrer el array-->
+     <% arrayJuego_mesa.forEach(juego_mesa => { %>
+       <!--Aquí podremos mostrar todos los pokemon en una tabla-->
+     <% }) %>
+    <% } %>
+</div>
+<div class="container ">
+    <h1 class="d-flex flex-row justify-content-center alig-items-center">Juegos de mesa</h1>
+    <a  class="btn btn-danger m-2 d-flex flex-row justify-content-center alig-items-center" href="/juego_mesa/crear">Añadir juego de mesa</a>
+    <div class="table-responsive-sm table-responsive-md">
+      <table class="table table-hover table-light">
+          <thead>
+              <tr class="table-dark">
+                <th scope="col">Nombre</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Fabricante</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Descripción</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                  <% if (arrayJuego_mesa.length>0) {%>
+                      <% arrayJuego_mesa.forEach(juego_mesa =>{ %>
+                <td><%= juego_mesa.nombre  %></td>
+                <td><%= juego_mesa.categoria  %></td>
+                <td><%= juego_mesa.fabricante  %></td>
+                <td><%= juego_mesa.precio  %></td>
+                <td><%= juego_mesa.descripcion  %></td>
+                <td><a class="btn btn-danger btn-sm" href="/juego_mesa/<%= juego_mesa.id %>">Editar/Eliminar</a></td>
+              
+              </tr>
+              <% }) %>
+              <% } %>
+            </tbody>
+      </table>
+  </div>
+
+    
+</div>
+<%- include("../template/footer") %>

@@ -1,0 +1,46 @@
+<%- include("../template/cabecera") %>
+<div class="container">
+    <!--Si existen elementos en el array de Figura-->
+    <% if (arrayFigura.length > 0) { %>
+     <!--Haremos el foreach para recorrer el array-->
+     <% arrayFigura.forEach(figura => { %>
+       <!--Aquí podremos mostrar todos los pokemon en una tabla-->
+     <% }) %>
+    <% } %>
+</div>
+<div class="container ">
+    <h1 class="d-flex flex-row justify-content-center alig-items-center">Figuras</h1>
+    <a  class="btn btn-danger m-2 d-flex flex-row justify-content-center alig-items-center" href="/figura/crear">Añadir figura</a>
+    <div class="table-responsive-sm table-responsive-md">
+      <table class="table table-hover table-light">
+          <thead>
+              <tr class="table-dark">
+                <th scope="col">Nombre</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Fabricante</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Descripción</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                  <% if (arrayFigura.length>0) {%>
+                      <% arrayFigura.forEach(figura =>{ %>
+                <td><%= figura.nombre  %></td>
+                <td><%= figura.categoria  %></td>
+                <td><%= figura.fabricante  %></td>
+                <td><%= figura.precio  %></td>
+                <td><%= figura.descripcion  %></td>
+                <td><a class="btn btn-danger btn-sm" href="/figura/<%= figura.id %>">Editar/Eliminar</a></td>
+              
+              </tr>
+              <% }) %>
+              <% } %>
+            </tbody>
+      </table>
+  </div>
+
+    
+</div>
+<%- include("../template/footer") %>

@@ -4,10 +4,10 @@ const Manga = require('../models/juego_mesa');
 
 router.get('/', async (req, res) => {
     try {
-        const arrayMangaDB = await Manga.find();
-        console.log(arrayMangaDB);
+        const arrayJuego_mesaDB = await Manga.find();
+        console.log(arrayJuego_mesaDB);
         res.render("juego_mesa/juego_mesa", { 
-            arrayManga: arrayMangaDB
+            arrayJuego_mesa: arrayJuego_mesaDB
         })
     } catch (error) {
         console.error(error)

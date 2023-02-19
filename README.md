@@ -1,4 +1,5 @@
 # Proyecto-Final-DWEC
+Desarrollado por Lucía Acitores Ferreira y David Granados Atienza
 Se realizará una plataforma en la que se puedan buscar mangas, libros o comics accediendo a una base de datos.
 ##
  La estructura de los datos se encuentran explicados en el fichero llamado "Esquema de datos.pdf".

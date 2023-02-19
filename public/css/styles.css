@@ -45,4 +45,28 @@ label {
   #footer a {
     color: white; }
 
+#lista_buscar {
+  position: fixed;
+  top: 165px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 500px;
+  z-index: 8;
+  background: white;
+  overflow: hidden;
+  display: none; }
+
+#lista_buscar li a {
+  display: block;
+  width: 500px;
+  color: #777777;
+  padding: 12px 20px; }
+
+#lista_buscar li a:hover {
+  background: #f3f3f3; }
+
+#lista_buscar li a i {
+  margin-right: 10px;
+  color: #777777; }
+
 /*# sourceMappingURL=styles.css.map */

@@ -4,22 +4,22 @@ inputBuscador = document.getElementById("inputBuscador");
 
 
 
-Document.getElementById("inputBuscador").addEventListener("keyup", buscador);
+document.getElementById("inputBuscador").addEventListener("keyup", buscador);
 
 
 
 function buscador() {
-    Filete = inputBuscador.value.toUpperCase();
-    Li = lista - buscador.getElementsTagName("li");
+    filter = inputBuscador.value.toUpperCase();
+    li = lista_buscar.getElementsTagName("li");
     for(i = 0; i < li.legths; i++) {
         a = li[i].getElementsTagName("a")[0];
-        TextoValor = a.textContent || a.innerText;
+        textoValor = a.textContent || a.innerText;
 
-        if(textValue.toUpperCase().indexOf(filter) > -1){
-            Li[i].style.display ="";
-            lista_buscador.style.display="block";
+        if(textoValor.toUpperCase().indexOf(filter) > -1){
+            li[i].style.display ="";
+            lista_buscar.style.display="block";
             if(inputBuscador.value === ""){
-                lista_buscador.style.display="none";
+                lista_buscar.style.display="none";
             }
         }else {
             li[i].style.display ="none";
@@ -30,5 +30,5 @@ function buscador() {
 
 
 function ocultar_buscador(){
-    lista_buscador.style.display="none";
+    lista_buscar.style.display="none";
 }

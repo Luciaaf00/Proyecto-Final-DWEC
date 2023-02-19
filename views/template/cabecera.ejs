@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  
+  <script src="../public/js/script_buscador.js"></script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <!--Icono-->
@@ -37,9 +37,26 @@
           </ul>
           <hr class="text-white-50">
 
-          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 p-3">
-            <input type="search" id="inputBuscador" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-          </form>
+          <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 p-3">
+            <input type="search" id="inputBuscador" class="form-control form-control-dark" placeholder="Buscar..." aria-label="Search">
+          </div>
+          <ul id="lista_buscar">
+              <li>
+                <a href="#"><i class="fas fa-search"></i>Mangas</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-search"></i>Figuras</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-search"></i>Ropa</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-search"></i>Juegos de mesa</a>
+              </li>
+          </ul>
+          <div id="ctn-search">
+
+          </div>
         </div>
       </div>
     </nav>
